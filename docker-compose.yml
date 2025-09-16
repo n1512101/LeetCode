@@ -1,0 +1,17 @@
+services:
+  postgresql:
+    image: bitnami/postgresql:16
+    container_name: postgresql-server
+    restart: always
+    environment:
+      - POSTGRESQL_USERNAME=myuser
+      - POSTGRESQL_PASSWORD=mypassword
+      - POSTGRESQL_DATABASE=mydatabase
+    ports:
+      - 5432:5432
+    volumes:
+      - pg_data:/bitnami/postgresql
+
+volumes:
+  pg_data:
+    driver: local
