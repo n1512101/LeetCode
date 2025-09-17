@@ -1,0 +1,12 @@
+function isPalindrome(s: string): boolean {
+  s = s.replace(/\W|_/g, "").toLowerCase();
+  const len = s.length;
+  for (let i = 0; i <= Math.floor(len / 2); i++) {
+    if (s[i] !== s[len - i - 1]) return false;
+  }
+  return true;
+}
+
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+console.log(isPalindrome("race a car")); // false
+console.log(isPalindrome("")); // true
